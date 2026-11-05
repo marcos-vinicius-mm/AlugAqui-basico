@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style/componentes.css">
+    <link rel="stylesheet" href="style/paginas.css">
+
+</head>
+<body>
+
+    <header class="topo">
+        <h1 class="marca">Alug<span>Aqui</span></h1>
+        <p>Busque casas, apartamentos e muito mais</p>
+
+        <div id="usuario-deslogado">
+        <a>Entrar</a>
+        <a>Cadastrar-se</a>
+        </div>
+    </header>
+
+    <form id="form-busca">
+
+        <label class="campo_busca">
+            Busca:
+        <input type="search" name="busca" placeholder="Buscar por título, descrição ou bairro">
+        </label>
+
+        <div class="filtros">
+
+            <label class="campo_filtro">
+                Valor Minimo
+                <input type="number" name="valor_min" placeholder="Preço mín." min="0">
+            </label>
+            
+            
+            <label class="campo_filtro">
+                Tipo de imóvel
+                <select name="tipo">
+                    <option value="">Todos</option>
+                    <option value="casa">Casa</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="kitnet">Kitnet</option>
+                    <option value="comercial">Comercial</option>
+                </select>
+            </label>
+
+            <label class="campo_filtro">
+                Quartos
+                <select name="quartos">
+                    <option value="">Qualquer n° de quartos</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                </select>
+            </label>
+
+            <label class="campo_filtro">
+                Banheiros
+                <select name="banheiros">
+                    <option value="">Qualquer n° de banheiros</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                </select>
+            </label>
+            
+            <label class="campo_filtro">
+                Ordem
+                <select name="ordem">
+                    <option value="recentes">Mais recentes</option>
+                    <option value="menor_preco">Menor preço</option>
+                    <option value="maior_preco">Maior preço</option>
+                </select>
+            </label>
+
+            <div class="campo_filtro" id="opcoes">
+                <label>
+                    <input type="checkbox" name="aceita_pets"> Aceita pets
+                </label>
+
+                <label>
+                    <input type="checkbox" name="mobiliado"> Mobiliado
+                </label>
+            </div>
+           
+        </div>
+
+        <div class="acoes">
+            <button type="submit">Buscar</button>
+            <button type="reset">Limpar</button>
+        </div>
+    </form>
+
+
+    <section id="anuncios" class="lista-anuncios"></section>
+    
+</body>
+</html>

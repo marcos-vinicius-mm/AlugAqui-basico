@@ -1,0 +1,82 @@
+:root {
+    --cor-principal: #2a6f97;
+    --cor-principal-escura: #1f5675;
+    --cor-fundo: #f4f6f8;
+    --cor-superficie: #ffffff;
+    --cor-texto: #333333;
+    --cor-texto-suave: #52606d;
+    --cor-borda: #d5dbe1;
+    --raio: 8px;
+}
+
+
+.topo {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    text-align: left;
+    padding: 40px 16px 72px;
+    color: #fff;
+    border-radius: 5px;
+    background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
+}
+
+
+.topo h1 {
+    margin: 0 0 6px;  
+    font-size: clamp(24px, 4vw, 34px);
+}  
+
+.topo p {
+    margin: 0;  
+    opacity: 0.85;
+}  
+
+
+.topo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    z-index: -1;
+    background:
+    linear-gradient(90deg, rgba(31, 86, 117, 0.35), rgba(31, 86, 117, 0)),
+    url("../assents/imgs/cedro.jpg") center / cover no-repeat;
+
+
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 25%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 25%);
+}
+
+.topo h1 {
+    margin: 0 0 6px;
+    font-size: clamp(24px, 4vw, 34px);
+}
+
+.topo p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+.topo h1.marca {
+    margin: 0 0 8px;
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.topo h1.marca span {
+    font-weight: 300;           
+    color: #bfe3f7;             
+}
+
+.topo p {
+    margin: 0;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}

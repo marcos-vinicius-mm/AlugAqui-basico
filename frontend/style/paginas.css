@@ -9,6 +9,11 @@
     --raio: 8px;
 }
 
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #f2f4f7;
+  color: #333;
+}
 
 .topo {
     position: relative;

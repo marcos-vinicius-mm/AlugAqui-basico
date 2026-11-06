@@ -1,14 +1,8 @@
-/* ===== Geral ===== */
+/* Geral */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f2f4f7;
-  color: #333;
 }
 
 h2 {
@@ -24,7 +18,7 @@ section {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== Cabeçalho ===== */
+/* Cabeçalho */
 .topo {
   background-color: #1f3a5f;
   color: #fff;
@@ -40,7 +34,7 @@ section {
   gap: 12px;
 }
 
-/* ===== Layout (menu + conteúdo) ===== */
+/* Layout (menu + conteúdo) */
 .layout {
   display: flex;
   min-height: 80vh;
@@ -68,7 +62,7 @@ section {
   padding: 25px;
 }
 
-/* ===== Cards de métricas ===== */
+/* Cards de métricas */
 .cards {
   display: flex;
   gap: 20px;
@@ -98,7 +92,7 @@ section {
   color: #c0392b;
 }
 
-/* ===== Filtros ===== */
+/* Filtros */
 .filtros {
   margin-bottom: 15px;
 }
@@ -115,7 +109,7 @@ select {
   margin-right: 8px;
 }
 
-/* ===== Tabelas ===== */
+/* Tabelas */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -138,7 +132,7 @@ tr:hover td {
   background-color: #f5f8fc;
 }
 
-/* ===== Botões ===== */
+/* Botões */
 .btn {
   display: inline-block;
   padding: 6px 10px;
@@ -159,7 +153,7 @@ tr:hover td {
   opacity: 0.85;
 }
 
-/* ===== Selos de status ===== */
+/* Selos de status */
 .selo {
   display: inline-block;
   padding: 3px 8px;
@@ -174,7 +168,7 @@ tr:hover td {
 .selo-vermelho { background-color: #c0392b; }
 .selo-cinza    { background-color: #7f8c8d; }
 
-/* ===== Rodapé ===== */
+/* Rodapé */
 .rodape {
   background-color: #1f3a5f;
   color: #fff;
@@ -183,7 +177,7 @@ tr:hover td {
   font-size: 13px;
 }
 
-/* ===== Responsivo simples ===== */
+/* Responsivo simples */
 @media (max-width: 800px) {
   .layout {
     flex-direction: column;

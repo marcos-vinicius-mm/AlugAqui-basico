@@ -1,10 +1,13 @@
 :root {
     --cor-principal: #2a6f97;
     --cor-principal-escura: #1f5675;
+    --cor-erro: #c0392b;
     --cor-fundo: #f4f6f8;
+    --cor-fundo-vermelho: #fdecea;
     --cor-superficie: #ffffff;
     --cor-texto: #333333;
     --cor-texto-suave: #52606d;
+    --cor-texto-claro: #ffffff;
     --cor-borda: #d5dbe1;
     --raio: 8px;
 }

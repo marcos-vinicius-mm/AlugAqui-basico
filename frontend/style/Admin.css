@@ -7,11 +7,11 @@
 
 h2 {
   margin-bottom: 15px;
-  color: #1f3a5f;
+  color: var(--cor-principal);
 }
 
 section {
-  background-color: #fff;
+  background-color: var(--cor-superficie);
   padding: 20px;
   margin-bottom: 25px;
   border-radius: 6px;
@@ -20,8 +20,8 @@ section {
 
 /* Cabeçalho */
 .topo {
-  background-color: #1f3a5f;
-  color: #fff;
+  background-color: var(--cor-principal);
+  color: var(--cor-texto-claro);
   padding: 15px 25px;
   display: flex;
   justify-content: space-between;
@@ -41,20 +41,20 @@ section {
 }
 
 .menu {
-  width: 220px;
-  background-color: #2c4f7c;
+  width: 180px;
+  background-color: var(--cor-principal-escura);
   padding: 20px 0;
 }
 
 .menu a {
   display: block;
-  color: #fff;
+  color: var(--cor-texto-claro);
   text-decoration: none;
   padding: 12px 25px;
 }
 
 .menu a:hover {
-  background-color: #1f3a5f;
+  background-color: var(--cor-principal);
 }
 
 .conteudo {
@@ -70,8 +70,8 @@ section {
 
 .card {
   flex: 1;
-  background-color: #eaf1fb;
-  border-left: 5px solid #2c4f7c;
+  background-color: var(--cor-fundo);
+  border-left: 5px solid var(--cor-principal);
   padding: 20px;
   border-radius: 4px;
   text-align: center;
@@ -80,16 +80,16 @@ section {
 .card-numero {
   font-size: 36px;
   font-weight: bold;
-  color: #1f3a5f;
+  color: var(--cor-principal-escura);
 }
 
 .card-alerta {
-  background-color: #fdecea;
-  border-left-color: #c0392b;
+  background-color: var(--cor-fundo-vermelho);
+  border-left-color: var(--cor-erro);
 }
 
 .card-alerta .card-numero {
-  color: #c0392b;
+  color: var(--cor-erro);
 }
 
 /* Filtros */

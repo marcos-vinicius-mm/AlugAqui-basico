@@ -16,16 +16,21 @@
     isolation: isolate;
     text-align: left;
     padding: 40px 16px 72px;
+    padding-bottom: 90px;
     color: #fff;
     border-radius: 5px;
     background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
+    font-family: "Nunito", sans-serif;
 }
-
 
 .topo h1 {
     margin: 0 0 6px;  
     font-size: clamp(24px, 4vw, 34px);
 }  
+
+.topo h2{
+    font-weight: 600;
+}
 
 .topo p {
     margin: 0;  
@@ -50,33 +55,26 @@
     mask-image: linear-gradient(to right, transparent 0%, #000 25%);
 }
 
-.topo h1 {
-    margin: 0 0 6px;
-    font-size: clamp(24px, 4vw, 34px);
-}
-
-.topo p {
-  margin: 0;
-  opacity: 0.85;
-}
-
 .topo h1.marca {
     margin: 0 0 8px;
-    font-size: clamp(36px, 6vw, 56px);
+    font-size: 32px;
     font-weight: 800;
     letter-spacing: -1px;
     line-height: 1;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    font-family: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN",
+                 "Arial Rounded MT Bold", "Segoe UI", sans-serif;
 }
 
 .topo h1.marca span {
     font-weight: 300;           
-    color: #bfe3f7;             
+    color: #bfe3f7;  
+    font-size: 0.8em;          
 }
 
 .topo p {
     margin: 0;
-    font-size: 17px;
+    font-size: 14px;
     letter-spacing: 0.5px;
-    opacity: 0.9;
+    opacity: 0.8;
 }

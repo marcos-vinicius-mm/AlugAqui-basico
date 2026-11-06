@@ -443,6 +443,187 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAnuncioAnuncio extends Struct.CollectionTypeSchema {
+  collectionName: 'anuncios';
+  info: {
+    displayName: 'Anuncio';
+    pluralName: 'anuncios';
+    singularName: 'anuncio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    comentarios: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::comentario.comentario'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    denuncias: Schema.Attribute.Relation<'oneToMany', 'api::denuncia.denuncia'>;
+    descricao: Schema.Attribute.String;
+    imagens: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
+      Schema.Attribute.Required;
+    imovel: Schema.Attribute.Relation<'oneToOne', 'api::imovel.imovel'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::anuncio.anuncio'
+    > &
+      Schema.Attribute.Private;
+    preco: Schema.Attribute.Integer & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    status_anuncio: Schema.Attribute.Enumeration<
+      ['ativo', 'alugado', 'pausado']
+    > &
+      Schema.Attribute.DefaultTo<'ativo'>;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    usuario: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
+export interface ApiComentarioComentario extends Struct.CollectionTypeSchema {
+  collectionName: 'comentarios';
+  info: {
+    displayName: 'Comentario';
+    pluralName: 'comentarios';
+    singularName: 'comentario';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    anuncio: Schema.Attribute.Relation<'manyToOne', 'api::anuncio.anuncio'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    denuncias: Schema.Attribute.Relation<'oneToMany', 'api::denuncia.denuncia'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::comentario.comentario'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    resposta: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::comentario.comentario'
+    >;
+    resposta_de: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::comentario.comentario'
+    >;
+    texto: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    usario: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
+export interface ApiDenunciaDenuncia extends Struct.CollectionTypeSchema {
+  collectionName: 'denuncias';
+  info: {
+    displayName: 'Denuncia';
+    pluralName: 'denuncias';
+    singularName: 'denuncia';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    anuncio: Schema.Attribute.Relation<'manyToOne', 'api::anuncio.anuncio'>;
+    comentario: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::comentario.comentario'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    denunciante: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    descricao: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::denuncia.denuncia'
+    > &
+      Schema.Attribute.Private;
+    motivo: Schema.Attribute.Enumeration<
+      [
+        'spam',
+        'conteudo_inadequado',
+        'golpe_fraude',
+        'informacao_falsa',
+        'outro',
+      ]
+    > &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    status_denuncia: Schema.Attribute.Enumeration<
+      ['pendente', 'procedente', 'improcedente']
+    > &
+      Schema.Attribute.DefaultTo<'pendente'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiImovelImovel extends Struct.CollectionTypeSchema {
+  collectionName: 'imoveis';
+  info: {
+    displayName: 'Imovel';
+    pluralName: 'imoveis';
+    singularName: 'imovel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aceita_pets: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    bairro: Schema.Attribute.String & Schema.Attribute.Required;
+    cep: Schema.Attribute.BigInteger;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::imovel.imovel'
+    > &
+      Schema.Attribute.Private;
+    mobiliado: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    numero: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    qtd_banheiros: Schema.Attribute.Integer & Schema.Attribute.Required;
+    qtd_quartos: Schema.Attribute.Integer & Schema.Attribute.Required;
+    rua: Schema.Attribute.String;
+    tipo: Schema.Attribute.Enumeration<
+      ['casa', 'apartamento', 'kitnet', 'comercial']
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -902,12 +1083,18 @@ export interface PluginUsersPermissionsUser
     timestamps: true;
   };
   attributes: {
+    anuncios: Schema.Attribute.Relation<'oneToMany', 'api::anuncio.anuncio'>;
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    comentarios: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::comentario.comentario'
+    >;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    denuncias: Schema.Attribute.Relation<'oneToMany', 'api::denuncia.denuncia'>;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -931,6 +1118,7 @@ export interface PluginUsersPermissionsUser
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    telefone: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -954,6 +1142,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::anuncio.anuncio': ApiAnuncioAnuncio;
+      'api::comentario.comentario': ApiComentarioComentario;
+      'api::denuncia.denuncia': ApiDenunciaDenuncia;
+      'api::imovel.imovel': ApiImovelImovel;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

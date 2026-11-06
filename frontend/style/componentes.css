@@ -9,91 +9,52 @@
     --raio: 8px;
 }
 
-.topo {
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-    text-align: left;
-    padding: 40px 16px 72px;
-    color: #fff;
-    border-radius: 5px;
-    background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
-}
-
-
-.topo h1 {
-    margin: 0 0 6px;  
-    font-size: clamp(24px, 4vw, 34px);
-}  
-
-.topo p {
-    margin: 0;  
-    opacity: 0.85;
-}  
-
-
-.topo::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 55%;
-    z-index: -1;
-    background:
-    linear-gradient(90deg, rgba(31, 86, 117, 0.35), rgba(31, 86, 117, 0)),
-    url("../assents/imgs/cedro.jpg") center / cover no-repeat;
-
-
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 25%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 25%);
-}
-
-.topo h1 {
-    margin: 0 0 6px;
-    font-size: clamp(24px, 4vw, 34px);
-}
-
-.topo p {
-  margin: 0;
-  opacity: 0.85;
-}
-
-.topo h1.marca {
-    margin: 0 0 8px;
-    font-size: clamp(36px, 6vw, 56px);
-    font-weight: 800;
-    letter-spacing: -1px;
-    line-height: 1;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-}
-
-.topo h1.marca span {
-    font-weight: 300;           
-    color: #bfe3f7;             
-}
-
-.topo p {
-    margin: 0;
-    font-size: 17px;
-    letter-spacing: 0.5px;
-    opacity: 0.9;
+#logo{
+    margin-left: 40px;
 }
 
 #usuario-deslogado{
     display: flex;
     position:absolute;
     font-style: bold;
-    bottom: 15px;
-    left:25px;
-    gap:20px;
+    top: 15px;
+    right:25px;
+    gap:17px;
+}
+
+#login {
+    border: 2px solid #fff;
+    border-radius: 999px;
+    color:white;
+    background-color: transparent;
+}
+
+#cadastrar {
+    border: 2px solid #fff;
+    border-radius: 999px;
+    color: var(--cor-principal);
+    background-color: white;
+}
+
+#login,
+#cadastrar {
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+    padding-left: 12px;
+    line-height: 1.2;
+    text-decoration: none;
 }
 
 #form-busca {
-    margin-top: -40px;
+    margin: -60px auto 24px;
+    z-index: 2;
     position: relative;
     max-width: 900px;
-    margin: 24px auto;
     padding: 20px;
     background: var(--cor-superficie);
     border-radius: var(--raio);

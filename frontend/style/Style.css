@@ -1,0 +1,205 @@
+/* ===== Geral ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f4f7;
+  color: #333;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #1f3a5f;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Cabeçalho ===== */
+.topo {
+  background-color: #1f3a5f;
+  color: #fff;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topo-usuario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ===== Layout (menu + conteúdo) ===== */
+.layout {
+  display: flex;
+  min-height: 80vh;
+}
+
+.menu {
+  width: 220px;
+  background-color: #2c4f7c;
+  padding: 20px 0;
+}
+
+.menu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 25px;
+}
+
+.menu a:hover {
+  background-color: #1f3a5f;
+}
+
+.conteudo {
+  flex: 1;
+  padding: 25px;
+}
+
+/* ===== Cards de métricas ===== */
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  background-color: #eaf1fb;
+  border-left: 5px solid #2c4f7c;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.card-numero {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1f3a5f;
+}
+
+.card-alerta {
+  background-color: #fdecea;
+  border-left-color: #c0392b;
+}
+
+.card-alerta .card-numero {
+  color: #c0392b;
+}
+
+/* ===== Filtros ===== */
+.filtros {
+  margin-bottom: 15px;
+}
+
+.filtros label {
+  margin-right: 5px;
+}
+
+input,
+select {
+  padding: 7px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+/* ===== Tabelas ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #1f3a5f;
+  color: #fff;
+}
+
+tr:hover td {
+  background-color: #f5f8fc;
+}
+
+/* ===== Botões ===== */
+.btn {
+  display: inline-block;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-azul     { background-color: #2980b9; }
+.btn-vermelho { background-color: #c0392b; }
+.btn-verde    { background-color: #27ae60; }
+.btn-cinza    { background-color: #7f8c8d; }
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ===== Selos de status ===== */
+.selo {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.selo-verde    { background-color: #27ae60; }
+.selo-amarelo  { background-color: #f39c12; }
+.selo-vermelho { background-color: #c0392b; }
+.selo-cinza    { background-color: #7f8c8d; }
+
+/* ===== Rodapé ===== */
+.rodape {
+  background-color: #1f3a5f;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+}
+
+/* ===== Responsivo simples ===== */
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .menu {
+    width: 100%;
+    padding: 0;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

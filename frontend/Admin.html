@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlugAqui - Painel do Administrador</title>
+  <link rel="stylesheet" href="style/componentes.css">
+  <link rel="stylesheet" href="style/paginas.css">
+  <link rel="stylesheet" href="style/Style.css">
+  
+</head>
+<body>
+
+  <header class="topo">
+    <h1 class="marca">AlugAqui <span>Admin</span></h1>
+    <div class="topo-usuario">
+      <span>Olá, Administrador</span>
+      <a href="#" class="btn btn-cinza">Sair</a>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- Menu lateral -->
+    <nav class="menu">
+      <a href="#resumo">Resumo</a>
+      <a href="#denuncias">Moderação de denúncias</a>
+      <a href="#anuncios">Anúncios</a>
+      <a href="#usuarios">Usuários</a>
+      <a href="index.html">Voltar ao site</a>
+    </nav>
+
+    <main class="conteudo">
+
+      <!-- Métricas gerais -->
+      <section id="resumo">
+        <h2>Resumo geral</h2>
+        <div class="cards">
+          <div class="card">
+            <p class="card-numero">128</p>
+            <p>Anúncios ativos</p>
+          </div>
+          <div class="card">
+            <p class="card-numero">342</p>
+            <p>Usuários cadastrados</p>
+          </div>
+          <div class="card card-alerta">
+            <p class="card-numero">5</p>
+            <p>Denúncias pendentes</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fila de denúncias -->
+      <section id="denuncias">
+        <h2>Fila de denúncias</h2>
+
+        <form class="filtros">
+          <label for="filtro-status">Status:</label>
+          <select id="filtro-status">
+            <option>Pendentes</option>
+            <option>Analisadas</option>
+            <option>Todas</option>
+          </select>
+          <button type="submit" class="btn btn-azul">Filtrar</button>
+        </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tipo</th>
+              <th>Conteúdo denunciado</th>
+              <th>Motivo</th>
+              <th>Denunciante</th>
+              <th>Data</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Anúncio</td>
+              <td>Kitnet mobiliada - Centro</td>
+              <td>Suspeita de golpe</td>
+              <td>maria@email.com</td>
+              <td>02/11/2026</td>
+              <td><span class="selo selo-amarelo">Pendente</span></td>
+              <td>
+                <a href="#" class="btn btn-azul">Ver</a>
+                <a href="#" class="btn btn-vermelho">Remover</a>
+                <a href="#" class="btn btn-cinza">Ignorar</a>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Comentário</td>
+              <td>"Entre em contato pelo link..."</td>
+              <td>Spam</td>
+              <td>joao@email.com</td>
+              <td>03/11/2026</td>
+              <td><span class="selo selo-amarelo">Pendente</span></td>
+              <td>
+                <a href="#" class="btn btn-azul">Ver</a>
+                <a href="#" class="btn btn-vermelho">Remover</a>
+                <a href="#" class="btn btn-cinza">Ignorar</a>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Anúncio</td>
+              <td>Casa 3 quartos - Combate</td>
+              <td>Fotos não correspondem ao imóvel</td>
+              <td>ana@email.com</td>
+              <td>03/11/2026</td>
+              <td><span class="selo selo-verde">Analisada</span></td>
+              <td>
+                <a href="#" class="btn btn-azul">Ver</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Anúncios -->
+      <section id="anuncios">
+        <h2>Gerenciar anúncios</h2>
+
+        <form class="filtros">
+          <label for="busca-anuncio">Buscar:</label>
+          <input type="text" id="busca-anuncio" placeholder="Título ou bairro">
+          <button type="submit" class="btn btn-azul">Buscar</button>
+        </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Título</th>
+              <th>Anunciante</th>
+              <th>Preço</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10</td>
+              <td>Kitnet mobiliada - Centro</td>
+              <td>Carlos Silva</td>
+              <td>R$ 450,00</td>
+              <td><span class="selo selo-verde">Ativo</span></td>
+              <td>
+                <a href="#" class="btn btn-azul">Ver</a>
+                <a href="#" class="btn btn-cinza">Ocultar</a>
+                <a href="#" class="btn btn-vermelho">Remover</a>
+              </td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>Casa 3 quartos - Combate</td>
+              <td>Lúcia Pereira</td>
+              <td>R$ 900,00</td>
+              <td><span class="selo selo-cinza">Pausado</span></td>
+              <td>
+                <a href="#" class="btn btn-azul">Ver</a>
+                <a href="#" class="btn btn-cinza">Ocultar</a>
+                <a href="#" class="btn btn-vermelho">Remover</a>
+              </td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>Sala comercial - Av. Principal</td>
+              <td>Pedro Alves</td>
+              <td>R$ 1.200,00</td>
+              <td><span class="selo selo-vermelho">Alugado</span></td>
+              <td>
+                <a href="#" class="btn btn-azul">Ver</a>
+                <a href="#" class="btn btn-cinza">Ocultar</a>
+                <a href="#" class="btn btn-vermelho">Remover</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Usuários -->
+      <section id="usuarios">
+        <h2>Gerenciar usuários</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Papel</th>
+              <th>Conta</th>
+              <th>Cadastro</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Carlos Silva</td>
+              <td>carlos@email.com</td>
+              <td>Usuário</td>
+              <td><span class="selo selo-verde">Ativa</span></td>
+              <td>10/09/2026</td>
+              <td>
+                <a href="#" class="btn btn-azul">Perfil</a>
+                <a href="#" class="btn btn-vermelho">Suspender</a>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Lúcia Pereira</td>
+              <td>lucia@email.com</td>
+              <td>Usuário</td>
+              <td><span class="selo selo-verde">Ativa</span></td>
+              <td>15/09/2026</td>
+              <td>
+                <a href="#" class="btn btn-azul">Perfil</a>
+                <a href="#" class="btn btn-vermelho">Suspender</a>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Pedro Alves</td>
+              <td>pedro@email.com</td>
+              <td>Usuário</td>
+              <td><span class="selo selo-vermelho">Suspensa</span></td>
+              <td>20/09/2026</td>
+              <td>
+                <a href="#" class="btn btn-azul">Perfil</a>
+                <a href="#" class="btn btn-verde">Ativar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="rodape">
+    <p>AlugAqui - Projeto de Desenvolvimento de Software para Web</p>
+  </footer>
+
+</body>
+</html>

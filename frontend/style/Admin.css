@@ -19,7 +19,7 @@ section {
 }
 
 /* Cabeçalho */
-.topo.topo-admin {
+.topo.logo-admin {
   height: 150px;
   background-color: var(--cor-principal);
   color: var(--cor-texto-claro);
@@ -29,10 +29,11 @@ section {
   align-items: center;
 }
 
-.topo-admin-info {
-  display: flex;
-  align-items: top;
-  gap: 12px;
+
+
+#logo-admin h2{
+  font-weight: 600;
+  color: var(--cor-texto-claro);
 }
 
 /* Layout (menu + conteúdo) */

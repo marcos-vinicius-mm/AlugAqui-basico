@@ -19,7 +19,8 @@ section {
 }
 
 /* Cabeçalho */
-.topo {
+.topo.topo-admin {
+  height: 150px;
   background-color: var(--cor-principal);
   color: var(--cor-texto-claro);
   padding: 15px 25px;
@@ -28,9 +29,9 @@ section {
   align-items: center;
 }
 
-.topo-usuario {
+.topo-admin-info {
   display: flex;
-  align-items: center;
+  align-items: top;
   gap: 12px;
 }
 
@@ -147,11 +148,20 @@ tr:hover td {
 .btn-azul     { background-color: #2980b9; }
 .btn-vermelho { background-color: #c0392b; }
 .btn-verde    { background-color: #27ae60; }
-.btn-cinza    { background-color: #7f8c8d; }
+.btn-cinza     { background-color: #7f8c8d; }
 
-.btn:hover {
-  opacity: 0.85;
+.btn-cinza-sair { 
+  background-color: #7f8c8d;
+  min-width: 80px;
+  max-width: 100px;
+  border-radius: 999px;
 }
+
+
+.btn-cinza-sair:hover {
+  background-color: var(--cor-erro);
+}
+
 
 /* Selos de status */
 .selo {

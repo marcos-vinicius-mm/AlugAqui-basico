@@ -12,7 +12,7 @@
     --raio: 8px;
 }
 
-#logo{
+#logo, #logo-admin{
     margin-left: 40px;
     margin-top: 1px;
 }
@@ -68,7 +68,7 @@
     margin: 0;
     z-index: 1000;
     border-width: 1px;
-    color: white;
+    color: var(--cor-superficie);
 }
 
 #form-busca {

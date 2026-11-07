@@ -97,7 +97,7 @@
         return menu;
     }
 
-    // ===== 5. MONTAGEM =====
+    
     function renderNavbar() {
         const container = document.getElementById("navbar");
         if (!container) return;

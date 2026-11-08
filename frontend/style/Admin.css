@@ -36,31 +36,38 @@ section {
   color: var(--cor-texto-claro);
 }
 
-/* Layout (menu + conteúdo) */
+/* Layout */
 .layout {
-  display: flex;
   min-height: 80vh;
 }
 
 .menu {
-  width: 180px;
-  background-color: var(--cor-principal-escura);
-  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  background-color: var(--cor-principal);
+  padding: 8px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .menu a {
-  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
   color: var(--cor-texto-claro);
   text-decoration: none;
-  padding: 12px 25px;
+  padding: 12px;
+  border-radius: 4px;
 }
 
 .menu a:hover {
-  background-color: var(--cor-principal);
+  background-color: var(--cor-principal-escura);
 }
 
 .conteudo {
-  flex: 1;
   padding: 25px;
 }
 
@@ -190,13 +197,13 @@ tr:hover td {
 
 /* Responsivo simples */
 @media (max-width: 800px) {
-  .layout {
-    flex-direction: column;
+  .menu {
+    gap: 4px;
+    padding: 8px 12px;
   }
 
-  .menu {
-    width: 100%;
-    padding: 0;
+  .menu a {
+    flex-basis: calc(50% - 4px);
   }
 
   .cards {

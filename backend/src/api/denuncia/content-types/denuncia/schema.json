@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "denuncias",
+  "info": {
+    "singularName": "denuncia",
+    "pluralName": "denuncias",
+    "displayName": "Denuncia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "motivo": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "spam",
+        "conteudo_inadequado",
+        "golpe_fraude",
+        "informacao_falsa",
+        "outro"
+      ]
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "status_denuncia": {
+      "type": "enumeration",
+      "default": "pendente",
+      "enum": [
+        "pendente",
+        "procedente",
+        "improcedente"
+      ]
+    },
+    "denunciante": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "denuncias"
+    },
+    "anuncio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::anuncio.anuncio",
+      "inversedBy": "denuncias"
+    },
+    "comentario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::comentario.comentario",
+      "inversedBy": "denuncias"
+    }
+  }
+}

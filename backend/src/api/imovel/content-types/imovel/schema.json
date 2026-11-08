@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "imoveis",
+  "info": {
+    "singularName": "imovel",
+    "pluralName": "imoveis",
+    "displayName": "Imovel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "casa",
+        "apartamento",
+        "kitnet",
+        "comercial"
+      ]
+    },
+    "bairro": {
+      "type": "string",
+      "required": true
+    },
+    "rua": {
+      "type": "string",
+      "required": false
+    },
+    "numero": {
+      "type": "string",
+      "required": false
+    },
+    "cep": {
+      "type": "biginteger",
+      "required": false
+    },
+    "qtd_quartos": {
+      "type": "integer",
+      "required": true
+    },
+    "qtd_banheiros": {
+      "type": "integer",
+      "required": true
+    },
+    "aceita_pets": {
+      "type": "boolean",
+      "required": true
+    },
+    "mobiliado": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

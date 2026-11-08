@@ -1,0 +1,86 @@
+/* Tela de login - reaproveita as variáveis de cores de componentes.css */
+
+#form-login {
+    margin: -60px auto 24px;
+    position: relative;
+    z-index: 2;
+    max-width: 420px;
+    padding: 24px;
+    background: var(--cor-superficie);
+    border-radius: var(--raio);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-login {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+.campo-login input {
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--cor-texto-suave);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+}
+
+.campo-login input:focus {
+    outline: none;
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 2px rgba(42, 111, 151, 0.2);
+}
+
+.campo-login input.invalido {
+    border-color: var(--cor-erro);
+}
+
+.msg-erro {
+    margin: 0;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: var(--cor-erro);
+    background: var(--cor-fundo-vermelho);
+    border-radius: 6px;
+}
+
+#form-login .acoes {
+    justify-content: stretch;
+}
+
+#form-login .acoes button {
+    width: 100%;
+    padding: 9px;
+    font-weight: 600;
+}
+
+.link-extra {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--cor-texto-suave);
+}
+
+.link-extra a {
+    color: var(--cor-principal);
+}
+
+.dica-teste {
+    padding: 10px 12px;
+    font-size: 13px;
+    color: var(--cor-texto-suave);
+    background: var(--cor-fundo);
+    border: 1px dashed var(--cor-borda);
+    border-radius: 6px;
+}
+
+.dica-teste p {
+    margin: 4px 0 0;
+}

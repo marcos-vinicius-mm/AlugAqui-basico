@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comentarios",
+  "info": {
+    "singularName": "comentario",
+    "pluralName": "comentarios",
+    "displayName": "Comentario"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "texto": {
+      "type": "text"
+    },
+    "usario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "comentarios"
+    },
+    "resposta_de": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comentario.comentario",
+      "mappedBy": "resposta"
+    },
+    "resposta": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::comentario.comentario",
+      "inversedBy": "resposta_de"
+    },
+    "anuncio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::anuncio.anuncio",
+      "inversedBy": "comentarios"
+    },
+    "denuncias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::denuncia.denuncia",
+      "mappedBy": "comentario"
+    }
+  }
+}

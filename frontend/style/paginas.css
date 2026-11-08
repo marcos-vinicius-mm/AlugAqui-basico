@@ -1,0 +1,87 @@
+:root {
+    --cor-principal: #2a6f97;
+    --cor-principal-escura: #1f5675;
+    --cor-fundo: #f4f6f8;
+    --cor-superficie: #ffffff;
+    --cor-texto: #333333;
+    --cor-texto-suave: #52606d;
+    --cor-borda: #d5dbe1;
+    --raio: 8px;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #f2f4f7;
+  color: #333;
+}
+
+.topo {
+    height: 260px;     
+    padding: 10px 10px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    text-align: left;
+    padding: 40px 16px 72px;
+    padding-bottom: 90px;
+    color: #fff;
+    border-radius: 5px;
+    background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
+    font-family: "Nunito", sans-serif;
+}
+
+.topo h1 {
+    margin: 0 0 6px;  
+    font-size: clamp(24px, 4vw, 34px);
+}  
+
+.topo h2{
+    font-weight: 600;
+}
+
+.topo p {
+    margin: 0;  
+    opacity: 0.85;
+}  
+
+
+.topo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    z-index: -1;
+    background:
+    linear-gradient(90deg, rgba(31, 86, 117, 0.35), rgba(31, 86, 117, 0)),
+    url("../assets/imgs/cedro.jpg") center / cover no-repeat;
+
+
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 25%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 25%);
+}
+
+.topo h1.marca {
+    margin: 0 0 8px;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    font-family: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN",
+                 "Arial Rounded MT Bold", "Segoe UI", sans-serif;
+}
+
+.topo h1.marca span {
+    font-weight: 300;           
+    color: #bfe3f7;  
+    font-size: 0.8em;          
+}
+
+.topo p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}

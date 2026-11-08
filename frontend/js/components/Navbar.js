@@ -19,7 +19,7 @@
 
     function obterUsuario() {
         try {
-            return JSON.parse(localStorage.getItem("usuario"));
+            return JSON.parse(sessionStorage.getItem("usuario"));
         } catch {
             return null;
         }
@@ -88,7 +88,7 @@
         const sair = criar("button", "btn btn-cinza-sair rounded-pill mt-auto align-self-center", "Sair");
         sair.type = "button";
         sair.addEventListener("click", () => {
-            localStorage.removeItem("usuario");
+            sessionStorage.removeItem("usuario");
             location.href = "login.html";
         });
         body.appendChild(sair);

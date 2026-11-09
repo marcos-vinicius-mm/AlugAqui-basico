@@ -1,10 +1,5 @@
-function obterUsuario(){
-    try{
-        return JSON.parse(sessionStorage.getItem("usuario"))
-    }catch{
-        return null
-    }
-}
+import { obterUsuario } from "./auth.js"
+
 
 function renderAcesso(){
 

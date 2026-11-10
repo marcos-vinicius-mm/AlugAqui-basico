@@ -1,11 +1,13 @@
+import { obterUsuario } from "../auth.js";
+
 (function () {
 
     const itensMenu = [
-        { id: "home",       texto: "Home",            href: "index.html",         icone: "bi-house",       perfis: ["comum", "admin"] },
-        { id: "anunciar",   texto: "Anunciar imóvel", href: "novo-anuncio.html",  icone: "bi-plus-circle", perfis: ["comum", "admin"], destaque: true },
-        { id: "anuncios",   texto: "Meus anúncios",   href: "meus-anuncios.html", icone: "bi-building",    perfis: ["comum", "admin"] },
-        { id: "favoritos",  texto: "Favoritos",       href: "favoritos.html",     icone: "bi-heart",       perfis: ["comum", "admin"] },
-        { id: "perfil",     texto: "Meu perfil",      href: "perfil.html",        icone: "bi-person",      perfis: ["comum", "admin"] },
+        { id: "home",       texto: "Home",            href: "index.html",         icone: "bi-house",       perfis: ["authenticated", "admin"] },
+        { id: "anunciar",   texto: "Anunciar imóvel", href: "novo-anuncio.html",  icone: "bi-plus-circle", perfis: ["authenticated", "admin"], destaque: true },
+        { id: "anuncios",   texto: "Meus anúncios",   href: "meus-anuncios.html", icone: "bi-building",    perfis: ["authenticated", "admin"] },
+        { id: "favoritos",  texto: "Favoritos",       href: "favoritos.html",     icone: "bi-heart",       perfis: ["authenticated", "admin"] },
+        { id: "perfil",     texto: "Meu perfil",      href: "perfil.html",        icone: "bi-person",      perfis: ["authenticated", "admin"] },
         { id: "admin",      texto: "Painel admin",    href: "Admin.html",         icone: "bi-gear",        perfis: ["admin"] },
     ];
 
@@ -17,26 +19,21 @@
         return el;
     }
 
-    function obterUsuario() {
-        try {
-            return JSON.parse(sessionStorage.getItem("usuario"));
-        } catch {
-            return null;
-        }
-    }
+
 
     // Função que define quais itens do menu aparecem com base nas permissões do tipo de usuário
     function filtrarItens(usuario, idsOcultos) {
         const paginaAtual = location.pathname.split("/").pop() || "index.html";
 
         return itensMenu.filter(item =>
-            item.perfis.includes(usuario.tipo) &&   
+            item.perfis.includes(usuario.role.type) &&   
             !idsOcultos.includes(item.id) &&        
             item.href !== paginaAtual               
         );
     }
 
-    // ===== 4. PEÇAS DO MENU =====
+
+
     function criarLink(item) {
         const li = criar("li", "nav-item");
         const a = criar("a", "nav-link d-flex align-items-center gap-2");
@@ -72,7 +69,7 @@
         menu.setAttribute("aria-labelledby", "menuLateralLabel");
 
         const header = criar("div", "offcanvas-header");
-        const titulo = criar("h5", "offcanvas-title", `Olá, ${usuario.nome}`);
+        const titulo = criar("h5", "offcanvas-title", `Olá, ${usuario.username}`);
         titulo.id = "menuLateralLabel";
         const fechar = criar("button", "btn-close");
         fechar.type = "button";

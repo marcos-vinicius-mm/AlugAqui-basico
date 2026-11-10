@@ -26,9 +26,9 @@ import { obterUsuario } from "../auth.js";
         const paginaAtual = location.pathname.split("/").pop() || "index.html";
 
         return itensMenu.filter(item =>
-            item.perfis.includes(usuario.role.type) &&   
-            !idsOcultos.includes(item.id) &&        
-            item.href !== paginaAtual               
+            item.perfis.includes(usuario.role.type) &&
+            !idsOcultos.includes(item.id) &&
+            item.href !== paginaAtual
         );
     }
 
@@ -86,6 +86,7 @@ import { obterUsuario } from "../auth.js";
         sair.type = "button";
         sair.addEventListener("click", () => {
             sessionStorage.removeItem("usuario");
+            sessionStorage.removeItem("token");
             location.href = "login.html";
         });
         body.appendChild(sair);
@@ -94,7 +95,7 @@ import { obterUsuario } from "../auth.js";
         return menu;
     }
 
-    
+
     function renderNavbar() {
         const container = document.getElementById("navbar");
         if (!container) return;

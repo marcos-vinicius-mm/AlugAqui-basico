@@ -131,3 +131,109 @@
         background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
         box-shadow: 0 4px 12px rgba(42, 111, 151, 0.35);
     }
+
+    /* Formulário de anúncio (card sobre o topo, como na home) */
+    .pagina-formulario main.container {
+        max-width: 760px;
+        padding-bottom: 3rem;
+    }
+
+    .form-painel {
+        margin: -52px auto 0;
+        z-index: 2;
+        position: relative;
+        padding: 1.75rem 1.5rem;
+        background: var(--cor-superficie);
+        border-radius: var(--raio);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-painel .btn-primary {
+        background: var(--cor-principal);
+        border-color: var(--cor-principal-escura);
+    }
+
+    .form-painel .btn-primary:hover {
+        background: var(--cor-principal-escura);
+        border-color: var(--cor-principal-escura);
+    }
+
+    .form-titulo {
+        margin: 0 0 4px;
+        font-size: 1.25rem;
+        color: var(--cor-principal-escura);
+    }
+
+    .form-painel .form-label {
+        font-weight: 600;
+        color: var(--cor-texto);
+    }
+
+    .checks-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 1.5rem;
+    }
+
+    .preview-fotos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .preview-fotos img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--cor-borda);
+    }
+
+    #form-anuncio .acoes {
+        margin-top: 4px;
+        padding-top: 12px;
+        border-top: 1px solid var(--cor-borda);
+    }
+
+    #form-anuncio .acoes button[type="submit"] {
+        padding: 8px 16px;
+    }
+
+    .msg-form {
+        margin: 0;
+        padding: 8px 10px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+
+    .msg-form.erro {
+        color: var(--cor-erro);
+        background: var(--cor-fundo-vermelho);
+    }
+
+    .msg-form.sucesso {
+        color: #1f6b3f;
+        background: #e6f5ec;
+    }
+
+
+    .acoes-com-excluir {
+        justify-content: flex-end !important;
+    }
+
+    #acoes-form.acoes-com-excluir .me-auto {
+        margin-right: auto;
+    }
+
+    .form-desabilitado {
+        opacity: 0.85;
+        pointer-events: none;
+    }
+
+    .form-desabilitado .acoes {
+        pointer-events: auto;
+    }
+
+    .form-painel .text-primary {
+        color: var(--cor-principal-escura) !important;
+    }

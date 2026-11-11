@@ -4,6 +4,7 @@ export function getToken() {
     return sessionStorage.getItem("token");
 }
 
+// Função geral para realizar requisições para o BackEnd
 export async function request(caminho, { method = "GET", body, auth = true } = {}) {
     const headers = { "Content-Type": "application/json" };
     const token = getToken();

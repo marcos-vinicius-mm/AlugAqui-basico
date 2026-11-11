@@ -17,10 +17,7 @@ export async function login(email, senha){
         auth: false
     })
 
-    console.log("Resposta da autenticação:", resposta);
-
     sessionStorage.setItem("token", resposta.jwt)
-    console.log("Token armazenado:", sessionStorage.getItem("token"));
     const usuario = await request("/users/me?populate=role")
     sessionStorage.setItem("usuario", JSON.stringify(usuario));
 

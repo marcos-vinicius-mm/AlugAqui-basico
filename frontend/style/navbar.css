@@ -1,13 +1,4 @@
-/* ==========================================================
-   NAVBAR: botão que abre o menu + menu lateral (offcanvas)
-   Montado por js/components/Navbar.js.
-   Usa as variáveis de cor de componentes.css, então carregue
-   este arquivo DEPOIS dele.
-   ========================================================== */
-
-
-/* ---------- Botão (hambúrguer) que abre o menu ---------- */
-
+/* Botão menu */
 .navbar {
     position: static;
     padding: 0;
@@ -20,7 +11,7 @@
     top: 12px;
     right: 18px;
     margin: 0;
-    z-index: 1030;              /* acima do conteúdo, abaixo do menu aberto (Bootstrap usa 1045) */
+    z-index: 1030;
     border-width: 1px;
     color: var(--cor-superficie);
 }
@@ -35,15 +26,14 @@
 }
 
 
-/* ---------- Menu lateral ---------- */
-
+/* Menu lateral */
 #menuLateral {
     width: 280px;
     max-width: 85vw;
     background-color: var(--cor-superficie);
 }
 
-/* Cabeçalho do menu: mesma cor do topo do site */
+/* Cabeçalho do menu */
 #menuLateral .offcanvas-header {
     background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
     color: var(--cor-texto-claro);
@@ -53,7 +43,7 @@
     font-weight: 600;
 }
 
-/* Botão de fechar (o ícone padrão é escuro) */
+/* Botão de fechar */
 #menuLateral .btn-close {
     filter: invert(1) grayscale(100%) brightness(200%);
 }
@@ -63,8 +53,7 @@
 }
 
 
-/* ---------- Links ---------- */
-
+/* Links */
 #menuLateral .navbar-nav {
     gap: 4px;
 }
@@ -104,7 +93,7 @@
 }
 
 
-/* ---------- Botão Sair ---------- */
+/* Botão Sair */
 
 #menuLateral .btn-cinza-sair {
     min-width: 80px;

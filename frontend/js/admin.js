@@ -1,12 +1,10 @@
-// Painel do administrador: proteção da página + dados vindos do Strapi.
-// Substitui o guarda-admin.js (a verificação agora é a primeira etapa deste arquivo).
-//
-// Carregar no Admin.html com:  <script type="module" src="js/admin.js"></script>
+// Painel do administrador: proteção da página + dados do Strapi.
+// Substitui o guarda-admin.js
 
 import { request } from "./api.js";
 import { obterUsuario } from "./auth.js";
 
-const PERFIL_ADMIN = "admin";   // role.type do perfil de administrador no Strapi
+const PERFIL_ADMIN = "admin";
 const TAMANHO_PAGINA = "100";
 
 let usuarioAtual = null;
@@ -17,8 +15,7 @@ function $(seletor, base = document) {
     return base.querySelector(seletor);
 }
 
-// Monta elementos com textContent (nunca innerHTML): título de anúncio, comentário
-// e nome de usuário vêm de outras pessoas.
+// Monta elementos.
 function criar(tag, classes, texto) {
     const el = document.createElement(tag);
     if (classes) el.className = classes;
@@ -68,8 +65,7 @@ function selo([classe, texto]) {
     return criar("span", `selo ${classe}`, texto);
 }
 
-/* ========================= tabela / botões ========================= */
-
+// tabela / botões
 function mensagemTabela(tbody, texto) {
     const colunas = tbody.closest("table").querySelectorAll("thead th").length;
     const td = criar("td", "vazio", texto);
@@ -105,7 +101,7 @@ function botao(texto, cor, acao) {
     return b;
 }
 
-// junta os botões com um espaço entre eles
+// junta os botões
 function acoes(...botoes) {
     const caixa = document.createDocumentFragment();
     botoes.forEach((b, i) => {
@@ -150,16 +146,14 @@ function mostrarDetalhes(titulo, linhasDetalhe) {
     window.bootstrap.Modal.getOrCreateInstance(modal).show();
 }
 
-/* ========================= proteção da página ========================= */
+// proteção da página
 
 function ehAdmin(usuario) {
     return usuario?.role?.type === PERFIL_ADMIN;
 }
 
-// 1) confere o usuário guardado na sessão
-// 2) confirma com o servidor (o sessionStorage pode ser editado no navegador)
-// A permissão de verdade continua sendo a do Strapi: o perfil admin precisa ter
-// acesso às rotas usadas abaixo, e os outros perfis não.
+// 1) confere o usuário na sessão
+// 2) confirma com o servidor
 async function verificarAdmin() {
     const local = obterUsuario();
 
@@ -186,7 +180,7 @@ async function verificarAdmin() {
     }
 }
 
-/* ========================= resumo ========================= */
+// resumo
 
 async function total(caminho, filtros) {
     const resposta = await request(caminho + consulta({ ...filtros, "pagination[pageSize]": "1" }));
@@ -209,8 +203,7 @@ async function carregarResumo() {
     }
 }
 
-/* ========================= denúncias ========================= */
-
+// denúncias
 function conteudoDenunciado(d) {
     if (d.anuncio) return d.anuncio.titulo;
     if (d.comentario) return d.comentario.texto;
@@ -224,7 +217,7 @@ async function removerConteudoDenunciado(d) {
 
     if (!confirm(`Remover ${alvo.nome} denunciado? Esta ação não pode ser desfeita.`)) return;
 
-    // marca a denúncia antes: ao apagar o conteúdo, o vínculo com ele se perde
+    // marca a denúncia antes
     await request(`/denuncias/${d.documentId}`, {
         method: "PUT",
         body: { data: { status_denuncia: "procedente" } },
@@ -306,7 +299,7 @@ async function carregarDenuncias() {
     }
 }
 
-/* ========================= anúncios ========================= */
+// anúncios
 
 async function alterarStatusAnuncio(a, novoStatus) {
     await request(`/anuncios/${a.documentId}`, {
@@ -380,13 +373,13 @@ async function carregarAnuncios() {
     }
 }
 
-/* ========================= usuários ========================= */
+// usuários
 
 async function alterarBloqueio(u, bloquear) {
     const verbo = bloquear ? "Suspender" : "Reativar";
     if (!confirm(`${verbo} a conta de ${u.username}?`)) return;
 
-    // rota do users-permissions: o corpo não leva o envelope "data"
+    // rota do users-permissions
     await request(`/users/${u.id}`, { method: "PUT", body: { blocked: bloquear } });
     await recarregarTudo();
 }
@@ -404,7 +397,7 @@ function detalhesUsuario(u) {
 function linhaUsuario(u) {
     const botoes = [botao("Perfil", "btn-azul", () => detalhesUsuario(u))];
 
-    // o administrador não suspende a si mesmo nem outros administradores
+    // o administrador não suspende administradores
     if (u.id !== usuarioAtual.id && !ehAdmin(u)) {
         botoes.push(u.blocked
             ? botao("Ativar", "btn-verde", () => alterarBloqueio(u, false))
@@ -428,7 +421,6 @@ async function carregarUsuarios() {
     mensagemTabela(tbody, "Carregando...");
 
     try {
-        // a rota de usuários devolve uma lista simples (sem { data })
         const resposta = await request("/users" + consulta({ populate: "role", sort: "createdAt:desc" }));
         const lista = Array.isArray(resposta) ? resposta : (resposta.data || []);
 
@@ -441,7 +433,7 @@ async function carregarUsuarios() {
     }
 }
 
-/* ========================= início ========================= */
+// início
 
 function recarregarTudo() {
     return Promise.all([

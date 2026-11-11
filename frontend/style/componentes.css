@@ -1,4 +1,4 @@
-    :root {
+:root {
         --cor-principal: #2a6f97;
         --cor-principal-escura: #1f5675;
         --cor-erro: #c0392b;
@@ -52,24 +52,6 @@
         padding-left: 12px;
         line-height: 1.2;
         text-decoration: none;
-    }
-
-    .navbar {
-        position: static;
-        padding: 0;
-        z-index: 1050;
-    }
-
-    .navbar .btn-menu {
-        padding: 3px 5px;
-        position: absolute;
-        font-size: 2.0rem;
-        top: 12px;
-        right: 18px;
-        margin: 0;
-        z-index: 1050;
-        border-width: 1px;
-        color: var(--cor-superficie);
     }
 
     #form-busca {
@@ -142,12 +124,10 @@
     .acoes button{
         border-radius: 5px;
     }
-    
+
     .acoes button[type="submit"] {
         color: #fff;
         border: none;
         background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
         box-shadow: 0 4px 12px rgba(42, 111, 151, 0.35);
     }
-
-

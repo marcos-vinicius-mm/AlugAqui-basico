@@ -1,0 +1,113 @@
+/* Botão menu */
+.navbar {
+    position: static;
+    padding: 0;
+}
+
+.navbar .btn-menu {
+    padding: 3px 5px;
+    position: absolute;
+    font-size: 2.0rem;
+    top: 12px;
+    right: 18px;
+    margin: 0;
+    z-index: 1030;
+    border-width: 1px;
+    color: var(--cor-superficie);
+}
+
+.navbar .btn-menu:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar .btn-menu:focus-visible {
+    outline: 2px solid var(--cor-superficie);
+    outline-offset: 2px;
+}
+
+
+/* Menu lateral */
+#menuLateral {
+    width: 280px;
+    max-width: 85vw;
+    background-color: var(--cor-superficie);
+}
+
+/* Cabeçalho do menu */
+#menuLateral .offcanvas-header {
+    background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-escura));
+    color: var(--cor-texto-claro);
+}
+
+#menuLateral .offcanvas-title {
+    font-weight: 600;
+}
+
+/* Botão de fechar */
+#menuLateral .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+#menuLateral .offcanvas-body {
+    padding: 12px;
+}
+
+
+/* Links */
+#menuLateral .navbar-nav {
+    gap: 4px;
+}
+
+#menuLateral .nav-link {
+    padding: 10px 12px;
+    border-radius: var(--raio);
+    color: var(--cor-texto);
+    font-weight: 600;
+}
+
+#menuLateral .nav-link .bi {
+    font-size: 1.15rem;
+    color: var(--cor-principal);
+}
+
+#menuLateral .nav-link:hover,
+#menuLateral .nav-link:focus-visible {
+    background-color: var(--cor-fundo);
+    color: var(--cor-principal);
+}
+
+/* Link de destaque (ex.: "Anunciar imóvel") */
+#menuLateral .link-destaque {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+}
+
+#menuLateral .link-destaque .bi {
+    color: var(--cor-texto-claro);
+}
+
+#menuLateral .link-destaque:hover,
+#menuLateral .link-destaque:focus-visible {
+    background-color: var(--cor-principal-escura);
+    color: var(--cor-texto-claro);
+}
+
+
+/* Botão Sair */
+
+#menuLateral .btn-cinza-sair {
+    min-width: 80px;
+    max-width: 100px;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 999px;
+    background-color: #7f8c8d;
+    color: #fff;
+    font-size: 14px;
+}
+
+#menuLateral .btn-cinza-sair:hover,
+#menuLateral .btn-cinza-sair:focus-visible {
+    background-color: var(--cor-erro);
+    color: #fff;
+}
